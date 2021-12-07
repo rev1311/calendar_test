@@ -40,16 +40,17 @@ const d = new Date();
 const obj = getDate();
 
 function getDate() {
-    const month = d.getMonth();
-    month = monthArr[month]
+    let month = d.getMonth();
+    month = monthArr[month];
 
-    const day = d.getDay();
-    day = dayArr[day]
+    let day = d.getDay();
+    day = dayArr[day];
 
-    const date = d.getDate();
+    let date = d.getDate();
 
     h2.innerHTML = date + ", " + day;
-    h2.innerHTML = month;
+    h3.innerHTML = month;
 
-    return { m:month, dy:day, dt:date, yr:d.getFullYear() };
-}
+    return { m: month, dy: day, dt: date, yr: d.getFullYear() };
+    
+}console.log(getDate())
