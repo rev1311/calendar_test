@@ -3,7 +3,7 @@ A calendar that uses moment.js to capture day, date, month, year.
 
 ## Deployed Link
 
-* [Github Repository Page](https://github.com/rev1311/calendar_test)
+* [Calendar live link](https://github.com/rev1311/calendar_test)
 
 ![site](cal1.png)
 
