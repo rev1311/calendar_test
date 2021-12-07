@@ -80,7 +80,7 @@ body::before{
     color: #ff685d;
 }
 
-,.calendar__number{
+.calendar__number{
     display: flex;
     align-items: center;
     justify-content: center;
