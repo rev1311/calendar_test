@@ -38,6 +38,7 @@ const day31MonthArr = [
 
 const d = new Date();
 const obj = getDate();
+generateCalendar();
 
 function getDate() {
     let month = d.getMonth();
@@ -53,4 +54,47 @@ function getDate() {
 
     return { m: month, dy: day, dt: date, yr: d.getFullYear() };
     
-}console.log(getDate())
+};
+
+function generateCalendar(){
+    let days;
+
+    if(obj.m === "February" && obj.yr % 4 !== 0){
+        days = 28
+    } else if(obj.m === "February" && obj.yr % 4 === 0){
+        days = 29
+    } else if(day31MonthArr.includes(obj.m)){
+        days = 31
+    } else {
+        days = 30
+    }
+
+    const localDayArr = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ];
+
+    let startOfMonth = moment().clone().startOf("month").format("dddd");
+    let dayIndex = localDayArr.indexOf(startOfMonth);
+
+    for(let day of dayIndex){
+        let element = document.createElement("div");
+        element.className = "calendar__number_empty";
+        document.getElementById("lc").appendChild(element);
+    }
+
+    for(let date of days){
+        let element = document.createElement("div");
+        obj.dt === date
+        ? (element.className = "calendar__number calendar__number--current")
+        : (element.className = "calendar__number");
+        
+        element.appendChild(document.createTextNode(date));
+        document.getElementById("lc"),appendChild(element);
+    }
+}
