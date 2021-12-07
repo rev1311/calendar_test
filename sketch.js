@@ -69,7 +69,7 @@ function generateCalendar(){
         days = 30
     }
 
-    const localDayArr = [
+    const LocalDayArr = [
         "Monday",
         "Tuesday",
         "Wednesday",
@@ -80,21 +80,21 @@ function generateCalendar(){
     ];
 
     let startOfMonth = moment().clone().startOf("month").format("dddd");
-    let dayIndex = localDayArr.indexOf(startOfMonth);
+    let dayIndex = LocalDayArr.indexOf(startOfMonth);
 
-    for(let day of dayIndex){
+    for(let j=0;j<dayIndex;j++){
         let element = document.createElement("div");
         element.className = "calendar__number_empty";
         document.getElementById("lc").appendChild(element);
     }
 
-    for(let date of days){
+    for(let k=1;k<=days;k++){
         let element = document.createElement("div");
-        obj.dt === date
+        obj.dt === k
         ? (element.className = "calendar__number calendar__number--current")
         : (element.className = "calendar__number");
         
-        element.appendChild(document.createTextNode(date));
-        document.getElementById("lc"),appendChild(element);
+        element.appendChild(document.createTextNode(k));
+        document.getElementById("lc").appendChild(element);
     }
 }
